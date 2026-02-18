@@ -67,7 +67,7 @@ const images = [
 const gallery = document.querySelector("ul.gallery");
 
 let markup = images.map(image => `<li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
+  <a class="gallery-link" href="${image.original}">
     <img
       class="gallery-image"
       src="${image.preview}"
@@ -82,8 +82,6 @@ gallery.insertAdjacentHTML("beforeend", markup);
 
 gallery.addEventListener("click", event => {
     event.preventDefault();
-    if (event.target.nodeName === "UL") return;
-
     const targetImg = event.target.closest("img");
 
     if (targetImg !== null) {
