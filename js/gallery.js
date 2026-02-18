@@ -86,5 +86,7 @@ gallery.addEventListener("click", event => {
 
     const targetImg = event.target.closest("img");
 
-    if (targetImg !== null) basicLightbox.create('<img width="1112" height="640" src="' + targetImg.getAttribute("data-source") + '">').show();
+    if (targetImg !== null) {
+        basicLightbox.create('<img width="1112" height="640" src="' + targetImg.getAttribute("data-source") + '">').show();
+    }
 });
